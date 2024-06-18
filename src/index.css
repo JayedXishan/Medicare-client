@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #7033c6;
+  
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .bgImg1 {
+   
+    background-image: linear-gradient(180.00deg, rgba(46, 0, 92, 0.9), rgba(54, 10, 123, 0.3) 100%), url(https://i.ibb.co/JB0YPwT/pexels-rdne-6646774.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.bgImg2 {
+    background-image: linear-gradient(180.00deg, rgba(46, 0, 92, 0.9), rgba(54, 10, 123, 0.3) 100%), url(https://i.ibb.co/zJFxxJ5/pexels-shvetsa-5029855.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.bgImg3 {
+    background-image: linear-gradient(180.00deg, rgba(46, 0, 92, 0.9), rgba(54, 10, 123, 0.3) 100%), url(https://i.ibb.co/XShBTxc/290.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
