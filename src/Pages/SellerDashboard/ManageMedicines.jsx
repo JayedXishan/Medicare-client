@@ -3,7 +3,7 @@
 const ManageMedicines = () => {
     return (
         <div>
-            
+            hi
         </div>
     );
 };

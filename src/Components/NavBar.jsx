@@ -70,7 +70,7 @@ const NavBar = () => {
               </li>
               <li className="flex">
                 <Link
-                  to="/admin"
+                  to="/"
                   className="text-[#E1AFD1] flex items-center px-4 hover:font-normal hover:text-[#7469B6]"
                 >
                   Shop
@@ -148,7 +148,7 @@ const NavBar = () => {
                           </a>
                           <small className="text-xs">{user.displayName}</small>
                           <Link>Update Profile</Link>
-                          <Link>Dashboard</Link>
+                          <Link to="/dashboard">Dashboard</Link>
                           <button className="text-[#E1AFD1]" onClick={logout}>
                             Logout
                           </button>

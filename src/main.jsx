@@ -13,24 +13,23 @@ import {
   QueryClient,
   QueryClientProvider,
   useQuery,
-} from "@tanstack/react-query"
+} from "@tanstack/react-query";
 import Dashboard from "./Layout/Dashboard";
 import Cart from "./Pages/Cart";
 import PaymentHis from "./Pages/PaymentHis";
 import DashboardLayout from "./Layout/DashboardLayout";
 import AdminHome from "./Pages/Dashboard/AdminHome";
-import ManageUsers from "./Pages/Dashboard/ManageUsers"
-import ManageCategory from "./Pages/Dashboard/ManageCategory"
-import PaymentManagement from "./Pages/Dashboard/PaymentManagement"
-import SalesReport from "./Pages/Dashboard/SalesReport"
-import ManageBannerAdd from "./Pages/Dashboard/ManageBannerAdd"
+import ManageUsers from "./Pages/Dashboard/ManageUsers";
+import ManageCategory from "./Pages/Dashboard/ManageCategory";
+import PaymentManagement from "./Pages/Dashboard/PaymentManagement";
+import SalesReport from "./Pages/Dashboard/SalesReport";
+import ManageBannerAdd from "./Pages/Dashboard/ManageBannerAdd";
 
-import SellerDashLayout from "./Layout/SellerDashLayout"
-import SellerHome from "./Pages/SellerDashboard/SellerHome"
-import ManageMedicines from "./Pages/SellerDashboard/ManageMedicines"
-import PaymentHistory from "./Pages/SellerDashboard/PaymentHistory"
-import AskForAdd from "./Pages/SellerDashboard/AskForAdd"
-
+import SellerDashLayout from "./Layout/SellerDashLayout";
+import SellerHome from "./Pages/SellerDashboard/SellerHome";
+import ManageMedicines from "./Pages/SellerDashboard/ManageMedicines";
+import PaymentHistory from "./Pages/SellerDashboard/PaymentHistory";
+import AskForAdd from "./Pages/SellerDashboard/AskForAdd";
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -59,75 +58,63 @@ const router = createBrowserRouter([
         path: "/register",
         element: <Register></Register>,
       },
-      
     ],
   },
+ 
   {
     path: "dashboard",
-    element : <Dashboard></Dashboard>,
-    children: [
-      {
-        path: 'cart',
-        element: <Cart></Cart>
-      },
-      {
-        path:'payhistory',
-        element: <PaymentHis></PaymentHis>
-      }
-    ]
-  },
-  {
-    path: "admin",
     element: <DashboardLayout></DashboardLayout>,
     children: [
-        {
-           path: "home",
-           element: <AdminHome/>
-        },
-        {
-          path: "manage-users",
-          element: <ManageUsers/>
-        },
-        {
-          path: "manage-category",
-          element: <ManageCategory/>
-        },
-        {
-          path: "payment-manage",
-          element: <PaymentManagement/>
-        },
-        {
-          path: "sales-report",
-          element: <SalesReport/>
-        },
-        {
-          path: "manage-banner",
-          element: <ManageBannerAdd/>
-        }
-    ]
-},
-{
-  path: "seller",
-  element: <SellerDashLayout/>,
-  children: [
-    {
-      path: "home",
-      element: <SellerHome/>,
-    },
-    {
-      path: "manage-medicine",
-      element: <ManageMedicines/>
-    },
-    {
-      path: "payment-history",
-      element: <PaymentHistory/>
-    },
-    {
-      path: "ask-add",
-      element: <AskForAdd/>
-    },
-  ]
-}
+      {
+        path: "home",
+        element: <AdminHome />,
+      },
+      {
+        path: "manage-users",
+        element: <ManageUsers />,
+      },
+      {
+        path: "manage-category",
+        element: <ManageCategory />,
+      },
+      {
+        path: "payment-manage",
+        element: <PaymentManagement />,
+      },
+      {
+        path: "sales-report",
+        element: <SalesReport />,
+      },
+      {
+        path: "manage-banner",
+        element: <ManageBannerAdd />,
+      },
+      {
+        path: "sellerhome",
+        element: <SellerHome />,
+      },
+      {
+        path: "manage-medicine",
+        element: <ManageMedicines />,
+      },
+      {
+        path: "payment-history",
+        element: <PaymentHistory />,
+      },
+      {
+        path: "ask-add",
+        element: <AskForAdd />,
+      },
+      {
+        path: "cart",
+        element: <Cart></Cart>,
+      },
+      {
+        path: "payhistory",
+        element: <PaymentHis></PaymentHis>,
+      },
+    ],
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

@@ -3,16 +3,27 @@ import useAuth from '../Hooks/useAuth';
 import { AiFillGooglePlusCircle } from "react-icons/ai";
 import { FaGithub } from "react-icons/fa";
 import { useLocation, useNavigate } from 'react-router-dom';
+import useAxiosPublic from '../Hooks/useAxiosPublic';
 const SocialLogin = () => {
     const location = useLocation();
     const navigate = useNavigate();
-
+    const axiosPublic = useAxiosPublic();
     const { googleLogin, githubLogin } = useAuth();
 
     const LoginGoogle = () => {
         googleLogin()
             .then(result => {
                 console.log(result.user);
+                const userinfo = {
+                    email: result.user.email,
+                    name: result.user.displayName,
+                    photo: result.user.photoURL,
+                    role: "user",
+                  };
+                  axiosPublic.post("/users", userinfo)
+                  .then((res) => {
+                    
+                  });
                 navigate(location?.state ? location.state : '/');
             })
             .catch(error => {

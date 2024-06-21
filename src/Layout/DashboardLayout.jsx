@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 
 import { MdManageHistory, MdPayments, MdSpaceDashboard } from "react-icons/md";
 import { HiMiniUsers } from "react-icons/hi2";
@@ -10,8 +10,10 @@ import useSeller from "../Hooks/useSeller";
 const DashboardLayout = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
-  const [isAdmin]=useAdmin();
-  const [isSeller]=useSeller();
+  const [isAdmin] = useAdmin();
+  const [isSeller] = useSeller();
+
+  // console.log(isAdmin);
 
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
@@ -29,12 +31,11 @@ const DashboardLayout = () => {
           } md:block`}
         >
           <div className="p-6 ">
-            <h1 className="text-xl font-bold">Admin</h1>
-
             <ul className="mt-4 pb-10 ">
               {isAdmin ? (
                 <>
-                  <NavLink to="/admin/home">
+                  <h1 className="text-xl font-bold">Admin</h1>
+                  <NavLink to="/dashboard/home">
                     {" "}
                     <li
                       className=" flex items-center py-2 transition duration-300 ease-in-out hover:bg-white hover:text-[#3b3939] font-semibold  px-4 rounded-sm "
@@ -52,11 +53,11 @@ const DashboardLayout = () => {
                           fill="#EFCA08"
                         />
                       </svg>
-                      Amin Home{" "}
+                      Admin Home{" "}
                     </li>
                   </NavLink>
 
-                  <NavLink to="/admin/manage-users">
+                  <NavLink to="/dashboard/manage-users">
                     <li
                       className="flex items-center py-2 transition duration-300 ease-in-out hover:bg-white hover:text-[#3b3939] font-semibold  px-4 rounded-sm "
                       onClick={closeNav}
@@ -66,7 +67,7 @@ const DashboardLayout = () => {
                     </li>
                   </NavLink>
 
-                  <NavLink to="/admin/manage-category">
+                  <NavLink to="/dashboard/manage-category">
                     <li
                       className="flex items-center py-2 transition duration-300 ease-in-out hover:bg-white hover:text-[#3b3939] font-semibold  px-4 rounded-sm "
                       onClick={closeNav}
@@ -76,7 +77,7 @@ const DashboardLayout = () => {
                     </li>
                   </NavLink>
 
-                  <NavLink to="/admin/payment-manage">
+                  <NavLink to="/dashboard/payment-manage">
                     <li
                       className="flex items-center py-2 transition duration-300 ease-in-out hover:bg-white hover:text-[#3b3939] font-semibold  px-4 rounded-sm "
                       onClick={closeNav}
@@ -86,7 +87,7 @@ const DashboardLayout = () => {
                     </li>
                   </NavLink>
 
-                  <NavLink to="/admin/sales-report">
+                  <NavLink to="/dashboard/sales-report">
                     <li
                       className="flex items-center py-2 transition duration-300 ease-in-out hover:bg-white hover:text-[#3b3939] font-semibold  px-4 rounded-sm "
                       onClick={closeNav}
@@ -96,7 +97,7 @@ const DashboardLayout = () => {
                     </li>
                   </NavLink>
 
-                  <NavLink to="/admin/manage-banner">
+                  <NavLink to="/dashboard/manage-banner">
                     <li
                       className="flex items-center py-2 transition duration-300 ease-in-out hover:bg-white hover:text-[#3b3939] font-semibold  px-4 rounded-sm "
                       onClick={closeNav}
@@ -108,39 +109,69 @@ const DashboardLayout = () => {
                 </>
               ) : (
                 <>
-                  <NavLink to="/admin/manage-users">
-                    <li
-                      className="flex items-center py-2 transition duration-300 ease-in-out hover:bg-white hover:text-[#3b3939] font-semibold  px-4 rounded-sm "
-                      onClick={closeNav}
-                    >
-                      <HiMiniUsers className="mr-2 text-xl" />
-                      Manage Users
-                    </li>
-                  </NavLink>
+                  {isSeller ? (
+                    <>
+                      <h1 className="text-xl font-bold mb-6">Seller</h1>
+                      <NavLink to="/dashboard/sellerhome">
+                        <li
+                          className="flex items-center py-2 transition duration-300 ease-in-out hover:bg-white hover:text-[#3b3939] font-semibold  px-4 rounded-sm "
+                          onClick={closeNav}
+                        >
+                          <HiMiniUsers className="mr-2 text-xl" />
+                          Seller Home
+                        </li>
+                      </NavLink>
 
-                  <NavLink to="/admin/manage-category">
-                    <li
-                      className="flex items-center py-2 transition duration-300 ease-in-out hover:bg-white hover:text-[#3b3939] font-semibold  px-4 rounded-sm "
-                      onClick={closeNav}
-                    >
-                      <TbCategory className="mr-2 text-xl" />
-                      Manage Category{" "}
-                    </li>
-                  </NavLink>
+                      <NavLink to="/dashboard/manage-medicine">
+                        <li
+                          className="flex items-center py-2 transition duration-300 ease-in-out hover:bg-white hover:text-[#3b3939] font-semibold  px-4 rounded-sm "
+                          onClick={closeNav}
+                        >
+                          <TbCategory className="mr-2 text-xl" />
+                          Manage Medicine{" "}
+                        </li>
+                      </NavLink>
 
-                  <NavLink to="/admin/payment-manage">
-                    <li
-                      className="flex items-center py-2 transition duration-300 ease-in-out hover:bg-white hover:text-[#3b3939] font-semibold  px-4 rounded-sm "
-                      onClick={closeNav}
-                    >
-                      <MdPayments className="mr-2 text-xl" />
-                      Payment management{" "}
-                    </li>
-                  </NavLink>
+                      <NavLink to="/dashboard/payment-history">
+                        <li
+                          className="flex items-center py-2 transition duration-300 ease-in-out hover:bg-white hover:text-[#3b3939] font-semibold  px-4 rounded-sm "
+                          onClick={closeNav}
+                        >
+                          <MdPayments className="mr-2 text-xl" />
+                          Payment History{" "}
+                        </li>
+                      </NavLink>
+                    </>
+                  ) : (
+                    <>
+                      <h1 className="text-xl font-bold mb-6">User</h1>
+                      <NavLink to="/dashboard/cart">
+                        <li
+                          className="flex items-center py-2 transition duration-300 ease-in-out hover:bg-white hover:text-[#3b3939] font-semibold  px-4 rounded-sm "
+                          onClick={closeNav}
+                        >
+                          <HiMiniUsers className="mr-2 text-xl" />
+                          My Cart
+                        </li>
+                      </NavLink>
+
+                      <NavLink to="/dashboard/payhistory">
+                        <li
+                          className="flex items-center py-2 transition duration-300 ease-in-out hover:bg-white hover:text-[#3b3939] font-semibold  px-4 rounded-sm "
+                          onClick={closeNav}
+                        >
+                          <TbCategory className="mr-2 text-xl" />
+                          Payment History{" "}
+                        </li>
+                      </NavLink>
+
+                    
+                    </>
+                  )}
                 </>
               )}
 
-              <button>
+              <Link to="/">
                 {" "}
                 <li
                   className="absolute bottom-0 mb-10 flex items-center py-2 transition duration-300 ease-in-out hover:bg-white hover:text-[#3b3939] font-semibold  px-4 rounded-sm "
@@ -168,9 +199,9 @@ const DashboardLayout = () => {
                       fill="#fafafa"
                     />
                   </svg>
-                  Logout
+                  Home
                 </li>
-              </button>
+              </Link>
               {/* Add more navigation links as needed */}
             </ul>
           </div>

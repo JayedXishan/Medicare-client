@@ -32,7 +32,7 @@ const Register = () => {
 
   const onSubmit = (data) => {
     setError(null);
-    
+
     //console.log(data.photoUrl);
     //console.log(data.name);
     if (data.password.length < 6) {
