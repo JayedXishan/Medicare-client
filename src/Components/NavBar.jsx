@@ -78,7 +78,7 @@ const NavBar = () => {
               </li>
               <li className="flex">
                 <Link
-                  to="/"
+                  to="/dashboard/cart"
                   className="text-[#E1AFD1] flex items-center px-4 hover:font-normal hover:text-[#7469B6]"
                 >
                   <div className="space-x-2">

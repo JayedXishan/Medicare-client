@@ -5,6 +5,7 @@ import { FaEye } from "react-icons/fa6";
 import Swal from "sweetalert2";
 import useAuth from "../Hooks/useAuth";
 import useAxiosSecure from "../Hooks/useAxiosSecure";
+import useCart from "../Hooks/useCart";
 
 const Category = () => {
   const medis = useLoaderData();
@@ -12,6 +13,8 @@ const Category = () => {
   const navigate = useNavigate();
   const location =useLocation();
   const axiosSecure =useAxiosSecure();
+    const [,refetch]=useCart();
+
   const handleAddToCart = (medi) => {
     if (user && user.email) {
         const cartItem = {
@@ -19,7 +22,8 @@ const Category = () => {
             email: user.email,
             name: medi.medicine_name,
             image: medi.image,
-            price: medi.price 
+            price: medi.price, 
+            company: medi.company_name
         }
         axiosSecure.post('/carts',cartItem)
         .then(res => {
@@ -32,6 +36,7 @@ const Category = () => {
                     showConfirmButton: false,
                     timer: 1500
                   });
+                  refetch();
             }
         })
     } else {
