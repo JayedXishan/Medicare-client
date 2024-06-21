@@ -4,12 +4,17 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
 
-// import "./styles.css";
 import { FreeMode, Pagination } from "swiper/modules";
+import { useLoaderData } from "react-router-dom";
 
 const DiscountContainer = () => {
+  const medis = useLoaderData();
+
   return (
     <div>
+      <div className="w-full mb-[60px]">
+        <h3 className="text-center text-2xl font-bold mb-4">Offer Price</h3>
+      </div>
       <Swiper
         slidesPerView={3}
         spaceBetween={30}
@@ -20,15 +25,33 @@ const DiscountContainer = () => {
         modules={[FreeMode, Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
+        {/* <SwiperSlide>Slide 1</SwiperSlide> */}
+        {medis.map((medi) => (
+          <div key={medi._id} className="">
+            <SwiperSlide>
+              <div className="card w-96 bg-base-100 shadow-xl">
+                <figure className="px-10 pt-10">
+                  <img src={medi.image} alt="Shoes" className="rounded-xl" />
+                </figure>
+                <div className="card-body items-center text-center">
+                  <h2 className="card-title">{medi.medicine_name}</h2>
+                  <small>
+                    Discount :{" "}
+                    <span className="text-[#E1AFD1] font-semibold text-xl">
+                      {medi.discount}%
+                    </span>{" "}
+                  </small>
+                  <p>{medi.description}</p>
+                  <div className="card-actions">
+                    <button className="btn text-white bg-[#7469B6]">
+                      Details
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          </div>
+        ))}
       </Swiper>
     </div>
   );
