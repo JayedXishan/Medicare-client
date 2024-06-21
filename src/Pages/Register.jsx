@@ -32,7 +32,7 @@ const Register = () => {
 
   const onSubmit = (data) => {
     setError(null);
-
+    
     //console.log(data.photoUrl);
     //console.log(data.name);
     if (data.password.length < 6) {
@@ -56,11 +56,12 @@ const Register = () => {
             email: data.email,
             name: data.name,
             photo: data.photoUrl,
+            role: data.role,
           };
           axiosPublic.post("/users", userinfo).then((res) => {
             if (res.data.insertedId) {
               Swal.fire({
-                position: "middle-center",
+                position: "center",
                 icon: "success",
                 title: "Sign Up Successfully.",
                 showConfirmButton: false,
@@ -275,6 +276,23 @@ const Register = () => {
                     className="border-b-2 border-b-[#AD88C6] p-[3px]"
                   />
                   {errors.name && (
+                    <span className="text-red-500">This field is required</span>
+                  )}
+                </div>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text text-[#AD88C6]">Role</span>
+                  </label>
+                  <select
+                    {...register("role", { required: true })}
+                    type="text"
+                    defaultValue="user"
+                    className="border-b-2 border-b-[#AD88C6] p-[3px]"
+                  >
+                    <option value="user">user</option>
+                    <option value="seller">seller</option>
+                  </select>
+                  {errors.role && (
                     <span className="text-red-500">This field is required</span>
                   )}
                 </div>
