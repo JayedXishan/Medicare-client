@@ -8,6 +8,7 @@ import ErrorPage from "./Pages/ErrorPage";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import Home from "./Pages/Home";
+import Category from "./Pages/Category";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,12 @@ const router = createBrowserRouter([
         element: <Home></Home>,
         loader: () => fetch('http://localhost:5000/category')
       },
+      {
+        path: 'category/:No',
+        element:<Category></Category> ,
+        loader: ({ params }) => fetch(`http://localhost:5000/category/${params.No}`),
+      },
+
       {
         path: "/login",
         element: <Login></Login>,
