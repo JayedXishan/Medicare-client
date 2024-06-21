@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import { useState } from "react";
 import { FaShieldHeart } from "react-icons/fa6";
+import useCart from "../Hooks/useCart";
 
 const NavBar = () => {
   const { logout, user } = useAuth();
   const [isHovered, setIsHovered] = useState(false);
+  const [cart] = useCart();
   return (
     <div>
       <div className="lg:w-[1170px] mx-auto  mb-[20px]">
@@ -79,7 +81,10 @@ const NavBar = () => {
                   to="/"
                   className="text-[#E1AFD1] flex items-center px-4 hover:font-normal hover:text-[#7469B6]"
                 >
-                  Cart
+                  <div className="space-x-2">
+                    <span>Cart</span>
+                    <span className="rounded-full p-1 text-white bg-[#7469B6]"><small>+{cart.length}</small></span>
+                  </div>
                 </Link>
               </li>
 

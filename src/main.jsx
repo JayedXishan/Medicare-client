@@ -9,7 +9,12 @@ import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import Home from "./Pages/Home";
 import Category from "./Pages/Category";
-
+import {
+  QueryClient,
+  QueryClientProvider,
+  useQuery,
+} from "@tanstack/react-query"
+const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
     path: "/",
@@ -19,12 +24,13 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/category')
+        loader: () => fetch("http://localhost:5000/category"),
       },
       {
-        path: 'category/:No',
-        element:<Category></Category> ,
-        loader: ({ params }) => fetch(`http://localhost:5000/category/${params.No}`),
+        path: "category/:No",
+        element: <Category></Category>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/category/${params.No}`),
       },
 
       {
@@ -42,7 +48,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <FirebaseProvider>
-      <RouterProvider router={router} />
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
     </FirebaseProvider>
   </React.StrictMode>
 );
