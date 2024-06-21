@@ -43,10 +43,10 @@ const NavBar = () => {
                   <Link to="/" className="text-[#E1AFD1]">
                     Home
                   </Link>
-                  <Link to="/shop" className="text-[#E1AFD1]">
+                  <Link to="/" className="text-[#E1AFD1]">
                     Shop
                   </Link>
-                  <Link to="/" className="mr-4 text-[#E1AFD1]">
+                  <Link to="/dashboard/cart" className="mr-4 text-[#E1AFD1]">
                     Cart
                   </Link>
                 </ul>
@@ -70,7 +70,7 @@ const NavBar = () => {
               </li>
               <li className="flex">
                 <Link
-                  to="/"
+                  to="/admin"
                   className="text-[#E1AFD1] flex items-center px-4 hover:font-normal hover:text-[#7469B6]"
                 >
                   Shop

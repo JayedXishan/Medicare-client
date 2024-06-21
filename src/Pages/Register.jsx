@@ -1,18 +1,23 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import useAuth from "../Hooks/useAuth";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
+import useAxiosPublic from "../Hooks/useAxiosPublic";
+import Swal from "sweetalert2";
 
 const Register = () => {
   const { createUser, updateUserProfile } = useAuth();
   const [error, setError] = useState(null);
 
   const [isVisible, setIsVisible] = useState(false);
+  const axiosPublic = useAxiosPublic();
+  const navigate = useNavigate();
+  const run = "/";
 
   const toggleVisibility = () => {
     setIsVisible(!isVisible);
@@ -27,6 +32,7 @@ const Register = () => {
 
   const onSubmit = (data) => {
     setError(null);
+
     //console.log(data.photoUrl);
     //console.log(data.name);
     if (data.password.length < 6) {
@@ -45,8 +51,25 @@ const Register = () => {
     createUser(data.email, data.password)
       .then((result) => {
         console.log(result);
-        notify();
-        updateUserProfile(data.name, data.photoUrl);
+        updateUserProfile(data.name, data.photoUrl).then(() => {
+          const userinfo = {
+            email: data.email,
+            name: data.name,
+            photo: data.photoUrl,
+          };
+          axiosPublic.post("/users", userinfo).then((res) => {
+            if (res.data.insertedId) {
+              Swal.fire({
+                position: "middle-center",
+                icon: "success",
+                title: "Sign Up Successfully.",
+                showConfirmButton: false,
+                timer: 1500,
+              });
+              navigate(run);
+            }
+          });
+        });
       })
       .catch((error) => {
         notifyFailed();

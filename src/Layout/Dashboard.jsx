@@ -11,8 +11,8 @@ const Dashboard = () => {
           </p>
           <div className="flex space-x-4 justify-between items-center ">
             <Link to="/">Home</Link>
-            <span>My Cart</span>
-            <span>Payment History</span>
+            <Link to="/dashboard/cart">My Cart</Link>
+            <Link to="/dashboard/payhistory">Payment History</Link>
           </div>
         </div>
       </div>
