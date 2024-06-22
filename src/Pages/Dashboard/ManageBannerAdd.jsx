@@ -1,6 +1,9 @@
 import Swal from "sweetalert2";
 import useAuth from "../../Hooks/useAuth";
 import { useState } from "react";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import useBanner from "../../Hooks/useBanner";
+import { RiDeleteBin5Line } from "react-icons/ri";
 
 const ManageBannerAdd = () => {
   const { user } = useAuth() || {};
@@ -40,6 +43,37 @@ const ManageBannerAdd = () => {
       });
   };
   const [isActive, setActive] = useState("1");
+
+
+  const [banner] = useBanner();
+  const axiosSecure = useAxiosSecure();
+
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axiosSecure.delete(`/banners/${id}`).then((res) => {
+          if (res.data.deletedCount > 0) {
+            refetch();  
+            Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success"
+              });
+          }
+        });
+      }
+    });
+  };
+
+
   return (
     <div>
       <div>
@@ -111,9 +145,42 @@ const ManageBannerAdd = () => {
             </>
           ) : (
             <>
-                <div>
-                    hi
-                </div>
+              <div className="overflow-x-auto">
+                <table className="table">
+                  {/* head */}
+                  <thead>
+                    <tr>
+                      <th>Image</th>
+                      <th>Title</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {banner.map((b) => (
+                      <tr key={b._id} className="bg-base-200">
+                        <td>
+                          <div>
+                            <img
+                              className="w-[50px] h-[50px] rounded-md"
+                              src={b.image}
+                              alt=""
+                            />
+                          </div>
+                        </td>
+                        <td>{b.name}</td>
+                        <td>
+                          <button
+                            onClick={() => handleDelete(b._id)}
+                            className="bg-red-500 rounded-[8px] p-2 text-white"
+                          >
+                            <RiDeleteBin5Line className="text-[24px]" />
+                          </button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </>
           )}
         </div>
