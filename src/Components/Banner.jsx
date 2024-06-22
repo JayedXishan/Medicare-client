@@ -45,6 +45,7 @@ const Banner = () => {
                 <p className="mx-auto text-white opacity-75 mt-6 lg:mt-8 w-[90%] lg:w-[70%] lg:text-lg text-sm">
                   {" "}
                   {b.description}
+                  
                 </p>
               </div>
             </div>
