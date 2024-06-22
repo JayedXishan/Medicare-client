@@ -30,6 +30,7 @@ import SellerHome from "./Pages/SellerDashboard/SellerHome";
 import ManageMedicines from "./Pages/SellerDashboard/ManageMedicines";
 import PaymentHistory from "./Pages/SellerDashboard/PaymentHistory";
 import AskForAdd from "./Pages/SellerDashboard/AskForAdd";
+import MediDetails from "./Pages/MediDetails";
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -49,6 +50,14 @@ const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`http://localhost:5000/category/${params.No}`),
       },
+
+      {
+        path: "/medidetails/:id",
+        element: <MediDetails></MediDetails>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/medidetails/${params.id}`),
+      },
+
 
       {
         path: "/login",

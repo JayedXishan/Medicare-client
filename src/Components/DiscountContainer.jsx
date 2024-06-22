@@ -26,32 +26,42 @@ const DiscountContainer = () => {
         className="mySwiper"
       >
         {/* <SwiperSlide>Slide 1</SwiperSlide> */}
-        {medis.map((medi) => (
-          <div key={medi._id} className="">
-            <SwiperSlide>
-              <div className="card w-96 bg-base-100 shadow-xl">
-                <figure className="px-10 pt-10">
-                  <img src={medi.image} alt="Shoes" className="rounded-xl" />
-                </figure>
-                <div className="card-body items-center text-center">
-                  <h2 className="card-title">{medi.medicine_name}</h2>
-                  <small>
-                    Discount :{" "}
-                    <span className="text-[#E1AFD1] font-semibold text-xl">
-                      {medi.discount}%
-                    </span>{" "}
-                  </small>
-                  <p>{medi.description}</p>
-                  <div className="card-actions">
-                    <button className="btn text-white bg-[#7469B6]">
-                      Details
-                    </button>
+        {medis.map((medi) =>
+          medi.discount == "0" ? (
+            <></>
+          ) : (
+            <>
+              <div key={medi._id} className="">
+                <SwiperSlide>
+                  <div className="card w-96 bg-base-100 shadow-xl">
+                    <figure className="px-10 pt-10">
+                      <img
+                        src={medi.image}
+                        alt="Shoes"
+                        className="rounded-xl"
+                      />
+                    </figure>
+                    <div className="card-body items-center text-center">
+                      <h2 className="card-title">{medi.medicine_name}</h2>
+                      <small>
+                        Discount :{" "}
+                        <span className="text-[#E1AFD1] font-semibold text-xl">
+                          {medi.discount}%
+                        </span>{" "}
+                      </small>
+                      <p>{medi.description}</p>
+                      <div className="card-actions">
+                        <button className="btn text-white bg-[#7469B6]">
+                          Details
+                        </button>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                </SwiperSlide>
               </div>
-            </SwiperSlide>
-          </div>
-        ))}
+            </>
+          )
+        )}
       </Swiper>
     </div>
   );

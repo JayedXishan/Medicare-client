@@ -1,5 +1,5 @@
 import React from "react";
-import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLoaderData, useLocation, useNavigate } from "react-router-dom";
 import { FaEye } from "react-icons/fa6";
 
 import Swal from "sweetalert2";
@@ -91,7 +91,7 @@ const Category = () => {
                     >
                       Select
                     </div>{" "}
-                    <FaEye className="text-[#E1AFD1] text-2xl" />
+                    <Link to={`/medidetails/${medi._id}`}><FaEye className="text-[#E1AFD1] text-2xl" /></Link>
                   </div>
                 </td>
               </tr>
