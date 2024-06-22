@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 import useAuth from "../Hooks/useAuth";
 import useAxiosSecure from "../Hooks/useAxiosSecure";
 import useCart from "../Hooks/useCart";
+import { Helmet } from "react-helmet-async";
 
 const Category = () => {
   const medis = useLoaderData();
@@ -20,6 +21,7 @@ const Category = () => {
         const cartItem = {
             mediId: medi._id,
             email: user.email,
+            seller_email:medi.email,
             name: medi.medicine_name,
             image: medi.image,
             price: medi.price, 
@@ -57,6 +59,9 @@ const Category = () => {
   };
   return (
     <div className="lg:w-[900px] mx-auto">
+      <Helmet>
+        <title>Medicare | Category</title>
+      </Helmet>
       <div className="text-center mb-4 text-2xl font-extrabold">
         {medis[0]?.category ? <p>{medis[0].category}</p> : <p>No Medicine</p>}
       </div>

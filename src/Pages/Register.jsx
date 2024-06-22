@@ -9,6 +9,7 @@ import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
 import useAxiosPublic from "../Hooks/useAxiosPublic";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const { createUser, updateUserProfile } = useAuth();
@@ -82,6 +83,9 @@ const Register = () => {
 
   return (
     <div className="relative lg:w[1170px] mx-auto my-[50px] flex justify-center items-center">
+      <Helmet>
+        <title>Medicare | Signup</title>
+      </Helmet>
       <div className="absolute flex justify-center items-center  w-full z-[-10]">
         <div className="hidden  lg:flex">
           <svg

@@ -7,6 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const { signInUser } = useAuth();
@@ -44,6 +45,9 @@ const Login = () => {
   const notifyFailed = () => toast("Logged in Failed !");
   return (
     <div className="relative lg:w[1170px] mx-auto my-[50px] flex justify-center items-center">
+      <Helmet>
+        <title>Medicare | Login</title>
+      </Helmet>
       <div className="absolute flex justify-center items-center  w-full z-[-10]">
         <div className="hidden  lg:flex">
           <svg

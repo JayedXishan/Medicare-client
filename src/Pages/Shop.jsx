@@ -1,10 +1,16 @@
 import React from "react";
-import { Link, useLoaderData, useLocation, useNavigate } from "react-router-dom";
+import {
+  Link,
+  useLoaderData,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import useAxiosSecure from "../Hooks/useAxiosSecure";
 import useCart from "../Hooks/useCart";
 import Swal from "sweetalert2";
 import { FaEye } from "react-icons/fa6";
+import { Helmet } from "react-helmet-async";
 const Shop = () => {
   const medis = useLoaderData();
   const { user } = useAuth();
@@ -54,6 +60,9 @@ const Shop = () => {
   };
   return (
     <div className="lg:w-[900px] mx-auto">
+      <Helmet>
+        <title>Medicare | Shop</title>
+      </Helmet>
       <div className="text-center mb-4 text-2xl font-extrabold">
         ALL MEDECINE
       </div>

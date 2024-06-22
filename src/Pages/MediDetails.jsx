@@ -4,6 +4,7 @@ import useAuth from "../Hooks/useAuth";
 import useAxiosSecure from "../Hooks/useAxiosSecure";
 import useCart from "../Hooks/useCart";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const MediDetails = () => {
   const medi = useLoaderData();
@@ -56,6 +57,9 @@ const MediDetails = () => {
 
   return (
     <div className="lg:w-[1170px] mx-auto">
+      <Helmet>
+        <title>Medicare | Details</title>
+      </Helmet>
       <div>
         <div className="hero min-h-screen bg-base-200">
           <div className="hero-content flex-col lg:flex-row-reverse">

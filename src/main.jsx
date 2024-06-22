@@ -9,6 +9,9 @@ import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import Home from "./Pages/Home";
 import Category from "./Pages/Category";
+
+import { HelmetProvider } from "react-helmet-async";
+
 import {
   QueryClient,
   QueryClientProvider,
@@ -33,6 +36,7 @@ import AskForAdd from "./Pages/SellerDashboard/AskForAdd";
 import MediDetails from "./Pages/MediDetails";
 import Shop from "./Pages/Shop";
 import UpdateProfile from "./Pages/UpdateProfile";
+import PrivateRoute from "./Pages/PrivateRoute";
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -55,12 +59,11 @@ const router = createBrowserRouter([
       {
         path: "/medidetails",
         element: <Shop></Shop>,
-        loader: () =>
-          fetch(`http://localhost:5000/medidetails`),
+        loader: () => fetch(`http://localhost:5000/medidetails`),
       },
       {
         path: "/medidetails/:id",
-        element: <MediDetails></MediDetails>,
+        element: <PrivateRoute><MediDetails></MediDetails></PrivateRoute>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/medidetails/${params.id}`),
       },
@@ -68,9 +71,7 @@ const router = createBrowserRouter([
       {
         path: "/updateprofile",
         element: <UpdateProfile></UpdateProfile>,
-        
       },
-
 
       {
         path: "/login",
@@ -82,10 +83,10 @@ const router = createBrowserRouter([
       },
     ],
   },
- 
+
   {
     path: "dashboard",
-    element: <DashboardLayout></DashboardLayout>,
+    element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
     children: [
       {
         path: "home",
@@ -141,10 +142,12 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <FirebaseProvider>
-      <QueryClientProvider client={queryClient}>
-        <RouterProvider router={router} />
-      </QueryClientProvider>
-    </FirebaseProvider>
+    <HelmetProvider>
+      <FirebaseProvider>
+        <QueryClientProvider client={queryClient}>
+          <RouterProvider router={router} />
+        </QueryClientProvider>
+      </FirebaseProvider>
+    </HelmetProvider>
   </React.StrictMode>
 );
