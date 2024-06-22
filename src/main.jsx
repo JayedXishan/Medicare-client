@@ -48,24 +48,24 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/category"),
+        loader: () => fetch("https://final-assign-server.vercel.app/category"),
       },
       {
         path: "category/:No",
         element: <Category></Category>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/category/${params.No}`),
+          fetch(`https://final-assign-server.vercel.app/category/${params.No}`),
       },
       {
         path: "/medidetails",
         element: <Shop></Shop>,
-        loader: () => fetch(`http://localhost:5000/medidetails`),
+        loader: () => fetch(`https://final-assign-server.vercel.app/medidetails`),
       },
       {
         path: "/medidetails/:id",
         element: <PrivateRoute><MediDetails></MediDetails></PrivateRoute>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/medidetails/${params.id}`),
+          fetch(`https://final-assign-server.vercel.app/medidetails/${params.id}`),
       },
 
       {

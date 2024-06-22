@@ -49,11 +49,6 @@ const Footer = () => {
                   </li>
                   <li>
                     <a rel="noopener noreferrer" href="#">
-                      Integrations
-                    </a>
-                  </li>
-                  <li>
-                    <a rel="noopener noreferrer" href="#">
                       Pricing
                     </a>
                   </li>
@@ -82,13 +77,9 @@ const Footer = () => {
                 </ul>
               </div>
               <div className="space-y-3" bis_skin_checked="1">
-                <h3 className="uppercase dark:text-gray-900">Developers</h3>
+                <h3 className="uppercase dark:text-gray-900">Blogs</h3>
                 <ul className="space-y-1">
-                  <li>
-                    <a rel="noopener noreferrer" href="#">
-                      Public API
-                    </a>
-                  </li>
+                  
                   <li>
                     <a rel="noopener noreferrer" href="#">
                       Documentation

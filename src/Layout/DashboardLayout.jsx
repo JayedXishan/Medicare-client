@@ -67,7 +67,7 @@ const DashboardLayout = () => {
                     </li>
                   </NavLink>
 
-                  <NavLink to="/dashboard/manage-category">
+                  {/* <NavLink to="/dashboard/manage-category">
                     <li
                       className="flex items-center py-2 transition duration-300 ease-in-out hover:bg-white hover:text-[#3b3939] font-semibold  px-4 rounded-sm "
                       onClick={closeNav}
@@ -75,9 +75,9 @@ const DashboardLayout = () => {
                       <TbCategory className="mr-2 text-xl" />
                       Manage Category{" "}
                     </li>
-                  </NavLink>
+                  </NavLink> */}
 
-                  <NavLink to="/dashboard/payment-manage">
+                  {/* <NavLink to="/dashboard/payment-manage">
                     <li
                       className="flex items-center py-2 transition duration-300 ease-in-out hover:bg-white hover:text-[#3b3939] font-semibold  px-4 rounded-sm "
                       onClick={closeNav}
@@ -85,7 +85,7 @@ const DashboardLayout = () => {
                       <MdPayments className="mr-2 text-xl" />
                       Payment management{" "}
                     </li>
-                  </NavLink>
+                  </NavLink> */}
 
                   <NavLink to="/dashboard/sales-report">
                     <li

@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../FirebaseProvider/FirebaseProvider';
 
 const axiosSecure = axios.create({
-    baseURL: 'http://localhost:5000'
+    baseURL: 'https://final-assign-server.vercel.app'
 })
 
 const useAxiosSecure = () => {

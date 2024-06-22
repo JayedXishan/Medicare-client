@@ -50,7 +50,7 @@ const Cart = () => {
           company,
         };
 
-        fetch("http://localhost:5000/payment", {
+        fetch("https://final-assign-server.vercel.app/payment", {
           method: "POST", // *GET, POST, PUT, DELETE, etc.
           headers: {
             "Content-Type": "application/json",

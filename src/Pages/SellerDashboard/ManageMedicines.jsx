@@ -48,7 +48,7 @@ const ManageMedicines = () => {
 
 
 
-    fetch('http://localhost:5000/category', {
+    fetch('https://final-assign-server.vercel.app/category', {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
         headers: {
             "Content-Type": "application/json"

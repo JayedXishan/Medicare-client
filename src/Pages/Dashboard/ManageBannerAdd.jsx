@@ -25,7 +25,7 @@ const ManageBannerAdd = () => {
       email,
     };
 
-    fetch("http://localhost:5000/addbanner", {
+    fetch("https://final-assign-server.vercel.app/addbanner", {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       headers: {
         "Content-Type": "application/json",

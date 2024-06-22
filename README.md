@@ -1,8 +1,23 @@
-# React + Vite
+Website : Medi Care 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Assignment Category/variant: Assignment12_category_0022
+Admin email: mamun@gmail.com
+Admin password: MAmun102320
+Agent email: pranto@gmail.com
+Agent password: PRanto102320
+Front-end Live Site Link: https://finalassign-auth.web.app
+Client Side Github Repository Link: https://github.com/programming-hero-web-course1/b9a12-client-side-JayedXishan
+Server Side Github Repository Link: https://github.com/programming-hero-web-course1/b9a12-server-side-JayedXishan
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+features :
+ 1. jwt implemented
+ 2. admin dashboard
+ 3. seller dashboard
+ 4. user dashboard
+ 5. admin can manage cart
+ 6. admin can manage user
+ 7. seller can see revenue
+ 8. user can estimate expendature
+ 9. private route added
+ 10. admin can manage banner section
