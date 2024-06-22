@@ -5,7 +5,7 @@ import "swiper/css/free-mode";
 import "swiper/css/pagination";
 
 import { FreeMode, Pagination } from "swiper/modules";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const DiscountContainer = () => {
   const medis = useLoaderData();
@@ -51,9 +51,9 @@ const DiscountContainer = () => {
                       </small>
                       <p>{medi.description}</p>
                       <div className="card-actions">
-                        <button className="btn text-white bg-[#7469B6]">
+                        <Link to={`/medidetails/${medi._id}`}  className="btn text-white bg-[#7469B6]">
                           Details
-                        </button>
+                        </Link>
                       </div>
                     </div>
                   </div>

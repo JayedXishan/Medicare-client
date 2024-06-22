@@ -3,12 +3,12 @@ import Slider from "react-slick";
 const Review = () => {
   
   return (
-    <div className="lg:w-[1170px] mx-auto mt-[100px]">
+    <div className="lg:w-[1170px] mx-auto mt-36">
       <div className="p-2 lg:flex lg:justify-between lg:items-center w-full lg:h-[290px] h-[480px] bg-gradient-to-r from-[#7469B6] via-[#AD88C6] to-[#E1AFD1]">
         <div className="flex-1  my-7  lg:my-0">
             <div className="w-[80%] ml-4">
                 <h3 className="text-2xl font-bold text-[#D1BB9E] mb-3">Review</h3>
-                <p className="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti tenetur minima maxime, et voluptatum quasi!</p>
+                <p className="text-white">Reliable online pharmacy offering a wide range of medicines, fast delivery, competitive prices, and excellent customer service.</p>
             </div>
         </div>
         <div className="flex-1">
@@ -53,10 +53,7 @@ const Review = () => {
                     </div>
                     <div className="p-4 space-y-2 text-sm dark:text-gray-600">
                       <p>
-                        Absolutely thrilled with my purchase! The quality of the
-                        materials exceeded my expectations, and the delivery was
-                        prompt. Highly recommend!
-                      </p>
+                      Excellent service! My order arrived quickly, and the prices were unbeatable. Highly recommend this pharmacy                      </p>
                       
                     </div>
                   </div>
@@ -99,9 +96,7 @@ const Review = () => {
                     </div>
                     <div className="p-4 space-y-2 text-sm dark:text-gray-600">
                       <p>
-                        This website is a game-changer for me. I've found unique
-                        supplies and inspiration that I couldn't find anywhere
-                        else. Thank you for fueling my creative journey.
+                      Great experience! The website is easy to navigate, and the customer support was very helpful. Will buy again!
                       </p>
                       
                     </div>

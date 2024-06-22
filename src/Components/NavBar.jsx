@@ -43,7 +43,7 @@ const NavBar = () => {
                   <Link to="/" className="text-[#E1AFD1]">
                     Home
                   </Link>
-                  <Link to="/" className="text-[#E1AFD1]">
+                  <Link to="/medidetails" className="text-[#E1AFD1]">
                     Shop
                   </Link>
                   <Link to="/dashboard/cart" className="mr-4 text-[#E1AFD1]">
@@ -70,7 +70,7 @@ const NavBar = () => {
               </li>
               <li className="flex">
                 <Link
-                  to="/"
+                  to="/medidetails"
                   className="text-[#E1AFD1] flex items-center px-4 hover:font-normal hover:text-[#7469B6]"
                 >
                   Shop
@@ -147,7 +147,7 @@ const NavBar = () => {
                             <span className="badge">New</span>
                           </a>
                           <small className="text-xs">{user.displayName}</small>
-                          <Link>Update Profile</Link>
+                          <Link to="/updateprofile">Update Profile</Link>
                           <Link to="/dashboard">Dashboard</Link>
                           <button className="text-[#E1AFD1]" onClick={logout}>
                             Logout
