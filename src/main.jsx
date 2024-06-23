@@ -37,6 +37,7 @@ import MediDetails from "./Pages/MediDetails";
 import Shop from "./Pages/Shop";
 import UpdateProfile from "./Pages/UpdateProfile";
 import PrivateRoute from "./Pages/PrivateRoute";
+import Payment from "./Pages/Payment";
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -135,6 +136,11 @@ const router = createBrowserRouter([
       {
         path: "payhistory",
         element: <PaymentHis></PaymentHis>,
+      },
+
+      {
+        path: "payment",
+        element: <Payment></Payment>,
       },
     ],
   },

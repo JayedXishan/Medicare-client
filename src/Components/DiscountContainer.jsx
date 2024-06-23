@@ -33,12 +33,13 @@ const DiscountContainer = () => {
             <>
               <div key={medi._id} className="">
                 <SwiperSlide className="lg:w-96  w-[100px]">
-                  <div className="card w-[120px] lg:w-96 bg-base-100 shadow-xl">
-                    <figure className="px-10 pt-10">
-                      <img 
+                  <div className="card w-[150px] lg:w-96 bg-base-100 shadow-xl">
+                    <figure className="h-[90px] lg:h-[200px] px-10 pt-10">
+                      <img
+                        className="w-[50px] lg:w-full rounded-xl"
                         src={medi.image}
                         alt="Shoes"
-                        className="w-[50px] lg:w-full rounded-xl"
+                        
                       />
                     </figure>
                     <div className="card-body items-center text-center">

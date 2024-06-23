@@ -24,7 +24,7 @@ const Review = () => {
                       <div className="flex space-x-4">
                         <div>
                           <img
-                            src="https://source.unsplash.com/100x100/?portrait"
+                            src="https://i.ibb.co/gJhcDJx/man1.jpg"
                             alt=""
                             className="object-cover w-12 h-12 rounded-full dark:bg-gray-500"
                           />
@@ -67,7 +67,7 @@ const Review = () => {
                       <div className="flex space-x-4">
                         <div>
                           <img
-                            src="https://source.unsplash.com/100x100/?portrait"
+                            src="https://i.ibb.co/M74GC55/man2.jpg"
                             alt=""
                             className="object-cover w-12 h-12 rounded-full dark:bg-gray-500"
                           />
