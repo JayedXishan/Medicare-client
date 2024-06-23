@@ -44,7 +44,7 @@ const SellerHome = () => {
               Total sales revenue of your medicines
             </p>
 
-            <p className="text-2xl font-medium text-gray-900">{totalPrice}</p>
+            <p className="text-2xl font-medium text-gray-900">{parseInt(totalPrice)}</p>
           </div>
         </div>
 
@@ -91,7 +91,7 @@ const SellerHome = () => {
             <div>
               <p className="text-sm text-gray-500"> Paid Total</p>
 
-              <p className="text-2xl font-medium text-gray-900">{totalPaid}</p>
+              <p className="text-2xl font-medium text-gray-900">{parseInt(totalPaid)}</p>
             </div>
           </div>
 
@@ -137,7 +137,7 @@ const SellerHome = () => {
             <div>
               <p className="text-sm text-gray-500"> Pending Total</p>
 
-              <p className="text-2xl font-medium text-gray-900">{totalPending}</p>
+              <p className="text-2xl font-medium text-gray-900">{parseInt(totalPending)}</p>
             </div>
           </div>
 

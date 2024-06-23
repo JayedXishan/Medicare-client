@@ -53,7 +53,7 @@ const AdminHome = () => {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 pb-8 pt-4 mx-auto">
             <div className="flex flex-col justify-center items-center gap-2 border-2 border-dashed border-gray-500/50 p-4 rounded-md h-32 ">
               <div className="flex gap-2 items-center">
-                <span className="font-bold text-3xl md:text-4xl">{totalQuantity}</span>
+                <span className="font-bold text-3xl md:text-4xl">{parseInt(totalQuantity)}</span>
                 <FcSalesPerformance className="text-4xl" />
               </div>
               <span className="font-semibold text-sm text-center">
@@ -63,7 +63,7 @@ const AdminHome = () => {
 
             <div className="flex flex-col justify-center items-center gap-2 border-2 border-dashed border-gray-500/50 p-4 rounded-md h-32 ">
               <div className="flex gap-2 items-center">
-                <span className="font-bold text-3xl md:text-4xl">{totalPrice}</span>
+                <span className="font-bold text-3xl md:text-4xl">{parseInt(totalPrice)}</span>
                 <FaMoneyBillTrendUp className="text-4xl" />
               </div>
               <span className="font-semibold text-sm text-center">
@@ -73,7 +73,7 @@ const AdminHome = () => {
 
             <div className="flex flex-col justify-center items-center gap-2 border-2 border-dashed border-gray-500/50 p-4 rounded-md h-32 ">
               <div className="flex gap-2 items-center">
-                <span className="font-bold text-3xl md:text-4xl">{totalPaid}</span>
+                <span className="font-bold text-3xl md:text-4xl">{parseInt(totalPaid)}</span>
                 <FcPaid className="text-4xl" />
               </div>
               <span className="font-semibold text-sm text-center">
@@ -83,7 +83,7 @@ const AdminHome = () => {
 
             <div className="md:col-start-2 lg:col-auto flex flex-col justify-center items-center gap-2 border-2 border-dashed border-gray-500/50 p-4 rounded-md h-32 ">
               <div className="flex gap-2 items-center">
-                <span className="font-bold text-3xl md:text-4xl">{totalPending}</span>
+                <span className="font-bold text-3xl md:text-4xl">{parseInt(totalPending)}</span>
                 <MdOutlinePendingActions className="text-4xl" />
               </div>
               <span className="font-semibold text-sm text-center">

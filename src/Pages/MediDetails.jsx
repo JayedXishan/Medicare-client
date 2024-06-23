@@ -19,6 +19,7 @@ const MediDetails = () => {
         const cartItem = {
             mediId: medi._id,
             email: user.email,
+            seller_email:medi.email,
             name: medi.medicine_name,
             image: medi.image,
             price: medi.price, 
